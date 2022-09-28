@@ -1,5 +1,5 @@
 import unittest
-from persona import PersonaService
+from persona import Persona
 from unittest.mock import patch
 
 
@@ -7,22 +7,9 @@ class TestPersona(unittest.TestCase):
 
     @patch('builtins.input', side_effect=[1, 'Fernandez', 'Alberto'])
     def test_persona(self, mock_input):
-        persona = PersonaService()
-        self.assertEqual(persona.get_data(), {
-            "dni": 1,
-            "apellido": "Fernandez",
-            "nombre": "Alberto"
-        })
-
-    @patch('builtins.input', side_effects=[3, 'Trump', 'Donald'])
-    def test_input(self, input):
-        persona = PersonaService()
-        persona.__init__()
-        self.assertEqual(input, {
-            'documento': 3,
-            'apellido': 'Trump',
-            'nombre': 'Donald'
-        })
+        persona = Persona()
+        persona.input()
+        self.assertEqual(persona.__repr__(), "Persona: 1 - Fernandez, Alberto")
 
 
 if __name__ == "__main__":

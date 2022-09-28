@@ -1,17 +1,13 @@
 class Persona:
-
-    def __init__(self, documento=1, apellido='Torvalds', nombre='Linus'):
+    def __init__(self, documento = 1, apellido = 'Torvalds', nombre = 'Linus'):
         self.documento = documento
         self.apellido = apellido
         self.nombre = nombre
 
-    def display(self):
+    def __repr__(self):
         return f'Persona: {self.documento} - {self.apellido}, {self.nombre}'
 
-
-class PersonaService:
-
-    def input(self, persona=Persona()):
-        persona.documento = int(input('Ingrese documento: '))
-        persona.apellido = input('Ingrese apellido: ')
-        persona.nombre = input('Ingrese nombre: ')
+    def input(self):
+        self.documento = int(input('Ingrese documento: '))
+        self.apellido = input('Ingrese apellido: ')
+        self.nombre = input('Ingrese nombre: ')
