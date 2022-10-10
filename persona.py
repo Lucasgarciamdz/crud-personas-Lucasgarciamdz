@@ -1,5 +1,5 @@
 class Persona:
-    def __init__(self, documento = 1, apellido = 'Torvalds', nombre = 'Linus'):
+    def __init__(self, documento=1, apellido='Torvalds', nombre='Linus'):
         self.documento = documento
         self.apellido = apellido
         self.nombre = nombre
